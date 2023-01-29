@@ -1,12 +1,14 @@
 console.log("Welcome to Nine Holes")
 
+
+// Game state
 const players = ['O', 'X'];
 const gameBoard = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer;
 let gameBoardElem;
 
 
-//Element creation
+// Element creation
 const makeGameBoardElem = () => {
     const gameBoardElem = document.createElement('div');
     gameBoardElem.classList.add('game-board');
@@ -65,7 +67,7 @@ const checkBoard = () => {
         gameBoard[position1] === gameBoard[position2] &&
         gameBoard[position1] === gameBoard[position3]
         ) {
-        completeGame(`${gameBoard[position1]} player Wins!}`);
+        completeGame(`${gameBoard[position1]} player Wins!`);
     }
 }
 
@@ -97,5 +99,41 @@ const completeGame = message => {
 
     overlayElem.appendChild(messageElem);
 
+    const restartButtonElem = document.createElement('button');
+    restartButtonElem.textContent = 'Restart';
+    restartButtonElem.style.backgroundColor = 'transparent';
+    restartButtonElem.style.color = 'white';
+    restartButtonElem.style.border = '1px solid white';
+    restartButtonElem.style.padding = '10px 30px';
 
-}
+    restartButtonElem.addEventListener('click', () => {
+        resetGame();
+        document.body.removeChild(overlayElem);
+    });
+
+    overlayElem.appendChild(restartButtonElem);
+
+    document.body.appendChild(overlayElem);
+
+};
+
+//Initialization
+const resetGame = () => {
+    if (gameBoardElem) {
+        //old game board exists
+        document.body.removeChild(gameBoardElem);
+    }
+
+    gameBoardElem = makeGameBoardElem();
+
+    for (let row = 0; row < 9; row++) {
+        gameBoardElem.appendChild(makeSquareElem(row));
+    }
+
+    currentPlayer = players[0];
+    gameBoard.fill('');
+
+    document.body.appendChild(gameBoardElem);
+};
+
+resetGame();

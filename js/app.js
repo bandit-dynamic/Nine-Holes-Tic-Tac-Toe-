@@ -1,6 +1,5 @@
 console.log("Welcome to Nine Holes")
 
-
 // Game state
 const players = ['O', 'X'];
 const gameBoard = ['', '', '', '', '', '', '', '', ''];
@@ -30,6 +29,14 @@ const makeSquareElem = squareNumber => {
     );
     return squareElement;
 };
+
+const play = document.getElementById('button1')
+
+function playMusic() {
+    let audio = new Audio('audio/2 - Jungle  Hangar (Stages 1  7).mp3');
+    audio.play()
+}
+
 
 
 // Game Control
@@ -136,4 +143,8 @@ const resetGame = () => {
     document.body.appendChild(gameBoardElem);
 };
 
+//Event listeners
+play.addEventListener('click', playMusic);
+
+//Game functions
 resetGame();

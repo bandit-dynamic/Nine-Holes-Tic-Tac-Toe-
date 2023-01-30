@@ -10,10 +10,20 @@ body {
 }
 
 
+#button1 {
+    block-size: 74px;
+    inline-size: 74px;
+    font-size: 20px;
+    border-radius: 25px;
+    background: #97447d;
+    box-shadow: inset 7px -7px 15px #3c1b32,
+                inset -7px 7px 15px #f26dc8;
+} 
+
+
 * {
     box-sizing: border-box;
 }
-
 
 
 h1 {

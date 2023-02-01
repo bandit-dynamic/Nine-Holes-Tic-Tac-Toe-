@@ -6,6 +6,7 @@ const gameBoard = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer;
 let gameBoardElem;
 
+const gameOverSound = new Audio('audio/13 Game Over.mp3')
 
 // Element creation
 const makeGameBoardElem = () => {
@@ -24,6 +25,7 @@ const makeSquareElem = squareNumber => {
         gameBoard[squareNumber] = currentPlayer;
         checkBoard();
         switchPlayer();
+        clicketyClack.play()
         },
         { once: true }
     );
@@ -37,7 +39,7 @@ function playMusic() {
     audio.play()
 }
 
-
+// function trashTalk()
 
 // Game Control
 const switchPlayer = () => {
@@ -47,6 +49,7 @@ const switchPlayer = () => {
         currentPlayer = players [0];
     }
 };
+
 
 const checkBoard = () => {
     // gameBoard
@@ -85,6 +88,7 @@ const checkBoard = () => {
     }
 };
 
+
 const completeGame = message => {
     const overlayElem = document.createElement('div')
     overlayElem.style.position = 'fixed';
@@ -116,6 +120,9 @@ const completeGame = message => {
     restartButtonElem.addEventListener('click', () => {
         resetGame();
         document.body.removeChild(overlayElem);
+        addEventListener('click', () => {
+
+        })
     });
 
     overlayElem.appendChild(restartButtonElem);
@@ -129,6 +136,7 @@ const resetGame = () => {
     if (gameBoardElem) {
         //old game board exists
         document.body.removeChild(gameBoardElem);
+        
     }
 
     gameBoardElem = makeGameBoardElem();
@@ -143,8 +151,12 @@ const resetGame = () => {
     document.body.appendChild(gameBoardElem);
 };
 
+//audio effects
+let clicketyClack = document.getElementById('click audio' )
+
 //Event listeners
 play.addEventListener('click', playMusic);
 
 //Game functions
 resetGame();
+switchPlayer();

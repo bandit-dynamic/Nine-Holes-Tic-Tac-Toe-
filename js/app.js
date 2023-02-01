@@ -6,7 +6,6 @@ const gameBoard = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer;
 let gameBoardElem;
 
-const gameOverSound = new Audio('audio/13 Game Over.mp3')
 
 // Element creation
 const makeGameBoardElem = () => {
@@ -78,6 +77,7 @@ const checkBoard = () => {
         gameBoard[position1] === gameBoard[position3]
         ) {
         completeGame(`${gameBoard[position1]} player Wins!`);
+        playerWins.play()
     }
 }
 
@@ -85,6 +85,7 @@ const checkBoard = () => {
 
     if (allSquaresUsed) {
         completeGame(`It's a draw!`)
+        gameOver.play()
     }
 };
 
@@ -152,7 +153,9 @@ const resetGame = () => {
 };
 
 //audio effects
-let clicketyClack = document.getElementById('click audio' )
+let clicketyClack = document.getElementById('click audio')
+let gameOver = document.getElementById('game over audio')
+let playerWins = document.getElementById('player wins audio')
 
 //Event listeners
 play.addEventListener('click', playMusic);

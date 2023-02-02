@@ -36,9 +36,9 @@ const play = document.getElementById('button1')
 function playMusic() {
     let audio = new Audio('audio/2 - Jungle  Hangar (Stages 1  7).mp3');
     audio.play()
+    audio.pause()
+    // audio.currentTime()
 }
-
-// function trashTalk()
 
 // Game Control
 const switchPlayer = () => {
@@ -77,6 +77,8 @@ const checkBoard = () => {
         gameBoard[position1] === gameBoard[position3]
         ) {
         completeGame(`${gameBoard[position1]} player Wins!`);
+        setTimeout(() => {
+        }, 50)
         playerWins.play()
     }
 }
@@ -85,6 +87,8 @@ const checkBoard = () => {
 
     if (allSquaresUsed) {
         completeGame(`It's a draw!`)
+        setTimeout(() => {
+        }, 50)
         gameOver.play()
     }
 };

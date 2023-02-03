@@ -36,8 +36,10 @@ const play = document.getElementById('button1')
 function playMusic() {
     let audio = new Audio('audio/2 - Jungle  Hangar (Stages 1  7).mp3');
     audio.play()
-    audio.pause()
+    // audio.pause()
     // audio.currentTime()
+
+    
 }
 
 // Game Control

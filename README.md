@@ -4,6 +4,8 @@ I did this because I wanted to challenge myself with styling and DOM manipulatio
 
 Technologies used: HTML 5, CSS, JS ES6 (Vanilla-style, extreme DOM Manipulation, and my first go at keyframes animation, and totally rocked it). And one pixel art background from Canvas, but nothing else Canvas.
 
+I didn't run into too many problems that I couldn't solve within a day; however, one was how to create an array of images. Instead of using X's and O's, I wanted to keep with the theme and add animated pixeled character art, preferably with transparent backgrounds. In the end I couldn't solve this quickly enough and settled. I plan to add that little wrinkle when I have more time to further enhace the game experience.
+
 ## Project Choice (Tell us which project you're doing!) - Tic Tac Toe
 
 > A name for your Project  - Nine Holes

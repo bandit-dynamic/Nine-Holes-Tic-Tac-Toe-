@@ -1,7 +1,7 @@
 console.log("Welcome to Nine Holes")
 
 // Game state
-const players = ['O', 'X'];
+const players = ['X', 'O'];
 const gameBoard = ['', '', '', '', '', '', '', '', ''];
 let currentPlayer;
 let gameBoardElem;
@@ -83,6 +83,7 @@ const checkBoard = () => {
         }, 50)
         playerWins.play()
     }
+
 }
 
     const allSquaresUsed = gameBoard.every(square => square !== '');

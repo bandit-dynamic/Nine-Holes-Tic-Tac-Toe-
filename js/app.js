@@ -158,6 +158,7 @@ const resetGame = () => {
     document.body.appendChild(gameBoardElem);
 };
 
+
 //audio effects
 let clicketyClack = document.getElementById('click audio')
 let gameOver = document.getElementById('game over audio')

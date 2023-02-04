@@ -1,6 +1,6 @@
 # Nine-Holes-Tic-Tac-Toe-
 
-I did this because I wanted to challenge myself with styling and DOM manipulation. Basically, take something already challenging at my level, and put a nice shine on it. I think I met that goal. 
+I did this because I wanted to challenge myself with styling and DOM manipulation. Basically, take something already challenging at my level, and put a nice shine on it. I think I met that goal. Also, 
 
 Technologies used: HTML 5, CSS, JS ES6 (Vanilla-style, extreme DOM Manipulation, and my first go at keyframes animation, and totally rocked it). And one pixel art background from Canvas, but nothing else Canvas.
 
